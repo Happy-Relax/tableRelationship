@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HelloWorldResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelloWorldResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41396105">
-              <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,36 +34,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/item.java">
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.36525974">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/classes/org/glassfish/jersey/examples/helloworld/App.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#1613#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloWorldResource.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/classes/org/glassfish/jersey/examples/helloworld/HelloWorldResource.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.821428">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#2144#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -102,6 +78,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.416667">
+              <caret line="31" column="21" selection-start-line="28" selection-start-column="8" selection-end-line="31" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -124,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/item.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java" />
       </list>
     </option>
   </component>
@@ -862,14 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36655405">
-          <caret line="242" column="31" selection-start-line="242" selection-start-column="31" selection-end-line="242" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helloworld.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.050324675">
@@ -924,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/org/glassfish/jersey/examples/helloworld/HelloWorldResource.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.821428">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.96938777">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#0#2144#0" expanded="true" />
           </folding>
@@ -942,21 +921,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/item.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.416667">
+          <caret line="31" column="21" selection-start-line="28" selection-start-column="8" selection-end-line="31" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41396105">
-          <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.36525974">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

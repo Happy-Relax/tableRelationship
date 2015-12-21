@@ -39,14 +39,11 @@
  */
 package org.glassfish.jersey.examples.helloworld;
 
-import jdk.nashorn.internal.objects.NativeJSON;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -59,48 +56,21 @@ import java.util.List;
 public class HelloWorldResource {
 
     public static final String CLICHED_MESSAGE = "123";
-     HashMap coca=new HashMap();
-     HashMap  sprite=new HashMap();
-     HashMap  apple=new HashMap();
-     HashMap  litchi=new HashMap();
-     HashMap  noodles=new HashMap();
-    HashMap  battery=new HashMap();
-     ArrayList allItems=new ArrayList();
+
+    Item coca=new Item("ITEM000000","可口可乐","瓶",3.0f);
+    Item sprite=new Item("ITEM000001","雪碧","瓶",3.0f);
+    Item apple=new Item("ITEM000002","苹果","斤",5.5f);
+    Item litchi=new Item("ITEM000003","荔枝","斤",15.0f);
+    Item noodles=new Item("ITEM000004","方便面","袋",4.5f);
+    Item battery=new Item("ITEM000005","电池","个",2.0f);
+
+    ArrayList allItems=new ArrayList();
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
     public List getHello() {
 
-        coca.put("barcode","ITEM000000");
-        coca.put("name", "可口可乐");
-        coca.put("unit", "瓶");
-        coca.put( "price", 3.00);
-
-        sprite.put( "barcode","ITEM000001") ;
-        sprite.put("name", "雪碧");
-        sprite.put("unit", "瓶");
-        sprite.put("price",3.00);
-
-        apple.put("barcode","ITEM000002");
-        apple.put("name","苹果");
-        apple.put("unit","斤");
-        apple.put("price",5.50);
-
-        litchi.put("barcode", "ITEM000003");
-        litchi.put("name","荔枝");
-        litchi.put( "unit","斤");
-        litchi.put("price",15.00);
-
-        battery.put("barcode","ITEM000004");
-        battery.put("name","电池");
-        battery.put("unit","个");
-        battery.put( "price", 2.00);
-
-        noodles.put("barcode","ITEM000005");
-        noodles.put("name","方便面");
-        noodles.put("unit","袋");
-        noodles.put("price",4.50);
 
         allItems.add(coca);
         allItems.add(sprite);
