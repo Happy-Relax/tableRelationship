@@ -40,14 +40,21 @@
 package org.glassfish.jersey.examples.helloworld;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.session.SqlSessionManager;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import org.glassfish.grizzly.http.server.HttpServer;
+
 
 /**
  * Hello world!
@@ -61,7 +68,7 @@ public class App {
         try {
             System.out.println("\"Hello World\" Jersey Example App");
 
-            final ResourceConfig resourceConfig = new ResourceConfig(HelloWorldResource.class);
+            final ResourceConfig resourceConfig = createSessionInViewConfig();
             final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, resourceConfig, false);
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 @Override
@@ -75,9 +82,31 @@ public class App {
                     BASE_URI, ROOT_PATH));
             Thread.currentThread().join();
         } catch (IOException | InterruptedException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException(ex);
         }
 
+    }
+
+    public static ResourceConfig createSessionInViewConfig() throws IOException {
+        String resource = "mybatis.xml";
+
+        final Reader reader  = Resources.getResourceAsReader(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+        final SqlSessionManager sqlSessionManager = SqlSessionManager.newInstance(sqlSessionFactory);
+
+        final ItemRepository itemRepository = sqlSessionManager.getMapper(ItemRepository.class);
+
+
+        final ResourceConfig config = new ResourceConfig()
+                .packages(" org.glassfish.jersey.examples.helloworld")
+                .register(new AbstractBinder() {
+                    @Override
+                    protected void configure() {
+                        bind(itemRepository).to(ItemRepository.class);
+                    }
+                });
+
+        return config;
     }
 }
 

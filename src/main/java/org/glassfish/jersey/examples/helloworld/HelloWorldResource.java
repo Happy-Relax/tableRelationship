@@ -40,47 +40,84 @@
 package org.glassfish.jersey.examples.helloworld;
 
 import javax.ws.rs.GET;
+import javax.inject.Inject;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author Jakub Podlesak (jakub.podlesak at oracle.com)
  */
 
+//inject
 
 @Path("helloworld")
 public class HelloWorldResource {
 
-    public static final String CLICHED_MESSAGE = "123";
+    @Inject
+    private ItemRepository itemrepository;
 
-    Item coca=new Item("ITEM000000","可口可乐","瓶",3.0f);
-    Item sprite=new Item("ITEM000001","雪碧","瓶",3.0f);
-    Item apple=new Item("ITEM000002","苹果","斤",5.5f);
-    Item litchi=new Item("ITEM000003","荔枝","斤",15.0f);
-    Item noodles=new Item("ITEM000004","方便面","袋",4.5f);
-    Item battery=new Item("ITEM000005","电池","个",2.0f);
-
-    ArrayList allItems=new ArrayList();
-
+//    public static final String CLICHED_MESSAGE = "123";
+//
+//    Item coca=new Item("ITEM000000","可口可乐","瓶",3.0f);
+//    Item sprite=new Item("ITEM000001","雪碧","瓶",3.0f);
+//    Item apple=new Item("ITEM000002","苹果","斤",5.5f);
+//    Item litchi=new Item("ITEM000003","荔枝","斤",15.0f);
+//    Item noodles=new Item("ITEM000004","方便面","袋",4.5f);
+//    Item battery=new Item("ITEM000005","电池","个",2.0f);
+//
+//    ArrayList allItems=new ArrayList();
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
-    public List getHello() {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response list(){
 
 
-        allItems.add(coca);
-        allItems.add(sprite);
-        allItems.add(apple);
-        allItems.add(litchi);
-        allItems.add(noodles);
+//        ArrayList result = new ArrayList<>();
+        List<Item> list = itemrepository.findItem();
 
+//        for(Item item : list){
+//            Item mid=new Item(item.getBarcode(),item.getName(),item.getUnit(),item.getPrice());
+//            result.add(mid);
+//        }
 
-        return allItems;
+        return Response.status(200).entity(list).build();
     }
+
+    @Path("/insert")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response insert(){
+
+        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
+        itemrepository.insertItem(item);
+        return Response.status(200).entity(item).build();
+    }
+
+//    @Path("/")
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
+//    public List getHello() {
+//
+//
+//        allItems.add(coca);
+//        allItems.add(sprite);
+//        allItems.add(apple);
+//        allItems.add(litchi);
+//        allItems.add(noodles);
+//
+//
+//        return allItems;
+//    }
+
+
 
 
 }
