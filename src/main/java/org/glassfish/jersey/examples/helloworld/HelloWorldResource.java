@@ -39,17 +39,15 @@
  */
 package org.glassfish.jersey.examples.helloworld;
 
-import javax.ws.rs.GET;
+import javax.ws.rs.*;
 import javax.inject.Inject;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import javax.ws.rs.FormParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 
 /**
  *
@@ -58,11 +56,14 @@ import java.util.Map;
 
 //inject
 
-@Path("helloworld")
+@Path("mysql")
 public class HelloWorldResource {
 
     @Inject
     private ItemRepository itemrepository;
+
+    @Inject
+    private InputRepository inputRepository;
 
 //    public static final String CLICHED_MESSAGE = "123";
 //
@@ -74,7 +75,7 @@ public class HelloWorldResource {
 //    Item battery=new Item("ITEM000005","电池","个",2.0f);
 //
 //    ArrayList allItems=new ArrayList();
-
+    @Path("/getitems")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(){
@@ -91,14 +92,26 @@ public class HelloWorldResource {
         return Response.status(200).entity(list).build();
     }
 
-    @Path("/insert")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response insert(){
+    @Path("/insertItems")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insert_Items(@FormParam("inputs") String inputs){
 
-        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
-        itemrepository.insertItem(item);
-        return Response.status(200).entity(item).build();
+//        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
+//        itemrepository.insertItem(item);
+
+        return Response.status(200).entity(inputs).build();
+    }
+
+    @Path("/insertinputs")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insert_inputs(@FormParam("barcode") String barcode){
+
+//        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
+        inputRepository.insertinput(barcode);
+
+        return Response.status(200).entity(barcode).build();
     }
 
 //    @Path("/")

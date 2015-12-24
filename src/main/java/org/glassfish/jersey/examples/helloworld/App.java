@@ -95,7 +95,7 @@ public class App {
         final SqlSessionManager sqlSessionManager = SqlSessionManager.newInstance(sqlSessionFactory);
 
         final ItemRepository itemRepository = sqlSessionManager.getMapper(ItemRepository.class);
-
+        final InputRepository inputRepository = sqlSessionManager.getMapper(InputRepository.class);
 
         final ResourceConfig config = new ResourceConfig()
                 .packages(" org.glassfish.jersey.examples.helloworld")
@@ -103,7 +103,9 @@ public class App {
                     @Override
                     protected void configure() {
                         bind(itemRepository).to(ItemRepository.class);
+                        bind(inputRepository).to(InputRepository.class);
                     }
+
                 });
 
         return config;

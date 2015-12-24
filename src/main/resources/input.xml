@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="org.glassfish.jersey.examples.helloworld.InputRepository" >
+
+    <resultMap id="inputMapper" type="String">
+        <result property="barcode" column="barcode" />
+    </resultMap>
+
+    <select id="findinput" resultMap="inputMapper">
+            select * from Inputs
+    </select>
+
+    <insert id="insertinput">
+        insert into Inputs(barcode) values(#{barcode})
+    </insert>
+
+</mapper>
