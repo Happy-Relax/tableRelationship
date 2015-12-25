@@ -109,6 +109,7 @@ public class HelloWorldResource {
     public Response insert_inputs(@FormParam("barcode") String barcode){
 
 //        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
+        System.out.println(String.format(" %s",barcode));
         inputRepository.insertinput(barcode);
 
         return Response.status(200).entity(barcode).build();

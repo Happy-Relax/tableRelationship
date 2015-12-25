@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac40917-93cd-4810-bb0a-60a64b58d7fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/InputRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/input.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/glassfish/jersey/examples/helloworld/HelloWorldResource.class" afterPath="$PROJECT_DIR$/target/classes/org/glassfish/jersey/examples/helloworld/HelloWorldResource.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java" afterPath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java" afterPath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java" afterPath="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java" afterPath="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java" />
     </list>
     <ignored path="helloworld.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +28,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HelloWorldResource.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HelloWorldResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29220778">
+              <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersResourceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="73" column="125" selection-start-line="73" selection-start-column="125" selection-end-line="73" selection-end-column="125" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MediaType.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar!/javax/ws/rs/core/MediaType.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.785714">
+              <caret line="34" column="104" selection-start-line="34" selection-start-column="99" selection-end-line="34" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,30 +94,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="70" selection-start-line="104" selection-start-column="70" selection-end-line="104" selection-end-column="70" />
+              <caret line="81" column="42" selection-start-line="80" selection-start-column="12" selection-end-line="81" selection-end-column="42" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seed.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/db/seed.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="78" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/ItemRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -105,31 +110,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/input.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5500849">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InputRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/InputRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/input.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -161,8 +156,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mydetis.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/db/seed.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/ItemRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/item.xml" />
@@ -172,8 +165,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/InputRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java" />
         <option value="$PROJECT_DIR$/src/main/resources/input.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java" />
       </list>
     </option>
   </component>
@@ -214,8 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -417,10 +410,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mybatis-jersey-spike" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="checkstyle-suppressions&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -434,7 +429,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UsersRepositoryTest.should_find_all_users">
+  <component name="RunManager" selected="JUnit.UsersResourceTest.should_create_one_user">
     <configuration default="false" name="UsersRepositoryTest.should_find_all_users" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -448,6 +443,32 @@
       <option name="PACKAGE_NAME" value="org.glassfish.jersey.examples.helloworld" />
       <option name="MAIN_CLASS_NAME" value="org.glassfish.jersey.examples.helloworld.UsersRepositoryTest" />
       <option name="METHOD_NAME" value="should_find_all_users" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UsersResourceTest.should_create_one_user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.glassfish.jersey.examples.helloworld.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="helloworld" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.glassfish.jersey.examples.helloworld" />
+      <option name="MAIN_CLASS_NAME" value="org.glassfish.jersey.examples.helloworld.UsersResourceTest" />
+      <option name="METHOD_NAME" value="should_create_one_user" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -705,12 +726,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.UsersRepositoryTest.should_find_all_users" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UsersResourceTest.should_create_one_user" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UsersRepositoryTest.should_find_all_users" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UsersResourceTest.should_create_one_user" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UsersRepositoryTest.should_find_all_users" />
       </list>
     </recent_temporary>
   </component>
@@ -746,6 +769,12 @@
     <history-entry file="UsersRepositoryTest_should_find_all_users - 2015.12.23 at 13h 39m 38s.xml">
       <configuration name="UsersRepositoryTest.should_find_all_users" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UsersResourceTest_should_create_one_user - 2015.12.25 at 15h 22m 05s.xml">
+      <configuration name="UsersResourceTest.should_create_one_user" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UsersResourceTest_should_create_one_user - 2015.12.25 at 15h 23m 19s.xml">
+      <configuration name="UsersResourceTest.should_create_one_user" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
@@ -753,26 +782,26 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23352855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2920937" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -847,10 +876,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
           <folding>
+            <element signature="e#0#4755#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#3256#3257#0" expanded="false" />
             <element signature="e#3316#3317#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -899,10 +928,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
           <folding>
+            <element signature="e#0#4755#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#3256#3257#0" expanded="false" />
             <element signature="e#3316#3317#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -951,10 +980,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="47" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="47" />
           <folding>
+            <element signature="e#0#4755#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#3256#3257#0" expanded="false" />
             <element signature="e#3316#3317#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1003,10 +1032,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#4755#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#3256#3257#0" expanded="false" />
             <element signature="e#3316#3317#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1048,10 +1077,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
           <folding>
+            <element signature="e#0#4755#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#3256#3257#0" expanded="false" />
             <element signature="e#3316#3317#0" expanded="false" />
-            <element signature="e#4533#4534#0" expanded="false" />
-            <element signature="e#4699#4700#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,78 +1149,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="70" selection-start-line="104" selection-start-column="70" selection-end-line="104" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/InputRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/ItemRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.481482">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1206,7 +1167,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
           <folding />
         </state>
@@ -1214,9 +1175,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/input.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5500849">
+        <state vertical-scroll-proportion="-12.0">
           <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.481482">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="42" selection-start-line="80" selection-start-column="12" selection-end-line="81" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/InputRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/glassfish/jersey/examples/helloworld/UsersResourceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="125" selection-start-line="73" selection-start-column="125" selection-end-line="73" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar!/javax/ws/rs/core/MediaType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.785714">
+          <caret line="34" column="104" selection-start-line="34" selection-start-column="99" selection-end-line="34" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/glassfish/jersey/examples/helloworld/HelloWorldResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29220778">
+          <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

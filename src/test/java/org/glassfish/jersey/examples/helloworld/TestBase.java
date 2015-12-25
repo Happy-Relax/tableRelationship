@@ -12,6 +12,7 @@ import static org.mockito.Mockito.mock;
 
 public class TestBase extends JerseyTest {
     protected ItemRepository itemRepository = mock(ItemRepository.class);
+    protected InputRepository inputRepository = mock(InputRepository.class);
 
     @Override
     protected Application configure() {
@@ -27,6 +28,7 @@ public class TestBase extends JerseyTest {
             protected void configure() {
 
                 bind(itemRepository).to(ItemRepository.class);
+                bind(inputRepository).to(InputRepository.class);
             }
         }).packages("org.glassfish.jersey.examples.helloworld");
     }
