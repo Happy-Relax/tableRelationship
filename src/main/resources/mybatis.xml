@@ -30,6 +30,7 @@
     </environments>
     <mappers>
         <mapper resource="item.xml"/>
-        <mapper resource="input.xml"/>
+        <mapper resource="Recipet.xml"/>
+        <mapper resource="Inputs.xml"/>
     </mappers>
 </configuration>

@@ -1,20 +1,23 @@
 package org.glassfish.jersey.examples.helloworld;
 
-/**
- * Created by liujia on 12/21/15.
- */
-public class Item {
+public class Shopping{
     public String barcode;
     public String name;
     public String unit;
     public float price;
+    public long count;
+    public float totalprice;
 
-    public Item(String barcode, String name,  Float price,String unit){
-        this.barcode=barcode;
-        this.name=name;
-        this.unit=unit;
-        this.price=price;
+    public Shopping(Inputs inputs){
+        this.barcode=inputs.barcode;
+        this.name=inputs.name;
+        this.unit=inputs.unit;
+        this.price=inputs.price;
+        this.count=inputs.count;
+        this.totalprice=(this.count-(this.count/3))*this.price;
+
     }
+
 
     public String getBarcode(){
         return this.barcode;
@@ -31,5 +34,6 @@ public class Item {
     public float getPrice(){
         return this.price;
     }
-}
 
+
+}

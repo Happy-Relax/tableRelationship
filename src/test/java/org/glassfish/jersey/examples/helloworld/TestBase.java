@@ -4,14 +4,13 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
-import redis.clients.jedis.Jedis;
 
 import javax.ws.rs.core.Application;
 
 import static org.mockito.Mockito.mock;
 
 public class TestBase extends JerseyTest {
-    protected ItemRepository itemRepository = mock(ItemRepository.class);
+    protected RecipetRepository recipetRepository = mock(RecipetRepository.class);
     protected InputRepository inputRepository = mock(InputRepository.class);
 
     @Override
@@ -27,7 +26,7 @@ public class TestBase extends JerseyTest {
             @Override
             protected void configure() {
 
-                bind(itemRepository).to(ItemRepository.class);
+                bind(recipetRepository).to(RecipetRepository.class);
                 bind(inputRepository).to(InputRepository.class);
             }
         }).packages("org.glassfish.jersey.examples.helloworld");

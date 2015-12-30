@@ -42,8 +42,6 @@ package org.glassfish.jersey.examples.helloworld;
 import java.io.IOException;
 import java.io.Reader;
 import java.net.URI;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -94,7 +92,7 @@ public class App {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         final SqlSessionManager sqlSessionManager = SqlSessionManager.newInstance(sqlSessionFactory);
 
-        final ItemRepository itemRepository = sqlSessionManager.getMapper(ItemRepository.class);
+        final RecipetRepository recipetRepository = sqlSessionManager.getMapper(RecipetRepository.class);
         final InputRepository inputRepository = sqlSessionManager.getMapper(InputRepository.class);
 
         final ResourceConfig config = new ResourceConfig()
@@ -102,7 +100,7 @@ public class App {
                 .register(new AbstractBinder() {
                     @Override
                     protected void configure() {
-                        bind(itemRepository).to(ItemRepository.class);
+                        bind(recipetRepository).to(RecipetRepository.class);
                         bind(inputRepository).to(InputRepository.class);
                     }
 

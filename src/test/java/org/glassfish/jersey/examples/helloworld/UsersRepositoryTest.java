@@ -11,9 +11,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -21,7 +19,7 @@ import static org.junit.Assert.assertThat;
 
 public class UsersRepositoryTest {
     private SqlSessionFactory sqlSessionFactory;
-    private ItemRepository itemRepository;
+    private RecipetRepository recipetRepository;
     private SqlSession session;
 
     @Before
@@ -34,7 +32,7 @@ public class UsersRepositoryTest {
 
         session = sqlSessionFactory.openSession();
         session.getConnection().setAutoCommit(false);
-        itemRepository = session.getMapper(ItemRepository.class);
+        recipetRepository = session.getMapper(RecipetRepository.class);
 
     }
     
@@ -48,7 +46,7 @@ public class UsersRepositoryTest {
 
     @Test
     public void should_find_all_users() {
-        List<Item> users1 = itemRepository.findItem();
+        List<Item> users1 = recipetRepository.findItem();
         assertThat(users1.size(), is(6));
         
     }

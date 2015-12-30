@@ -60,7 +60,7 @@ import javax.ws.rs.Path;
 public class HelloWorldResource {
 
     @Inject
-    private ItemRepository itemrepository;
+    private RecipetRepository recipetRepository;
 
     @Inject
     private InputRepository inputRepository;
@@ -77,31 +77,23 @@ public class HelloWorldResource {
 //    ArrayList allItems=new ArrayList();
     @Path("/getitems")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
     public Response list(){
 
 
 //        ArrayList result = new ArrayList<>();
-        List<Item> list = itemrepository.findItem();
+        List<Item> list = recipetRepository.findItem();
 
 //        for(Item item : list){
 //            Item mid=new Item(item.getBarcode(),item.getName(),item.getUnit(),item.getPrice());
 //            result.add(mid);
 //        }
 
+
         return Response.status(200).entity(list).build();
     }
 
-    @Path("/insertItems")
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response insert_Items(@FormParam("inputs") String inputs){
 
-//        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
-//        itemrepository.insertItem(item);
-
-        return Response.status(200).entity(inputs).build();
-    }
 
     @Path("/insertinputs")
     @POST
@@ -131,7 +123,31 @@ public class HelloWorldResource {
 //        return allItems;
 //    }
 
+    @Path("/recipet")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
+    public Response recipet(){
+        //shoppinglist-->PriceItems
+        List<Inputs> inputs=recipetRepository.findinputs();
 
+        for(int i=0;i<inputs.size();i++)
+        {
+            Shopping shopping=new Shopping(inputs.get(i));
+            recipetRepository.insertshoppinglist(shopping);
+        }
+
+        List<Save> saves=recipetRepository.findsave();
+
+        for(int i=0;i<saves.size();i++)
+        {
+            Giftlist gift=new Giftlist(saves.get(i));
+            recipetRepository.insertgiftlist(gift);
+        }
+
+
+
+        return Response.status(200).entity(saves).build();
+    }
 
 
 }

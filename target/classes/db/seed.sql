@@ -5,3 +5,5 @@ INSERT INTO Items (barcode,name,unit,price) VALUES("ITEM000004","方便面","袋
 INSERT INTO Items (barcode,name,unit,price) VALUES("ITEM000005","电池","个",2.0);
 INSERT INTO Items (barcode,name,unit,price) VALUES("ITEM000002","苹果","斤",5.5);
 
+
+INSERT INTO promotions (barcode) VALUES("ITEM000000");
