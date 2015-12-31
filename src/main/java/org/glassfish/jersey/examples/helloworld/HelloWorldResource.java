@@ -43,6 +43,7 @@ import javax.ws.rs.*;
 import javax.inject.Inject;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.FormParam;
@@ -60,7 +61,7 @@ import javax.ws.rs.Path;
 public class HelloWorldResource {
 
     @Inject
-    private RecipetRepository recipetRepository;
+    private ReceiptRepository receiptRepository;
 
     @Inject
     private InputRepository inputRepository;
@@ -82,7 +83,7 @@ public class HelloWorldResource {
 
 
 //        ArrayList result = new ArrayList<>();
-        List<Item> list = recipetRepository.findItem();
+        List<Item> list = receiptRepository.findItem();
 
 //        for(Item item : list){
 //            Item mid=new Item(item.getBarcode(),item.getName(),item.getUnit(),item.getPrice());
@@ -123,30 +124,33 @@ public class HelloWorldResource {
 //        return allItems;
 //    }
 
-    @Path("/recipet")
+    List<Shopping> shoppings=new ArrayList<>();
+    List<Gift> gifts=new ArrayList<>();
+
+    @Path("/receipt")
     @GET
     @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
-    public Response recipet(){
+    public Response receipt(){
         //shoppinglist-->PriceItems
-        List<Inputs> inputs=recipetRepository.findinputs();
-
+        List<Inputs> inputs= receiptRepository.findinputs();
         for(int i=0;i<inputs.size();i++)
         {
             Shopping shopping=new Shopping(inputs.get(i));
-            recipetRepository.insertshoppinglist(shopping);
+            shoppings.add(shopping);
         }
 
-        List<Save> saves=recipetRepository.findsave();
+        List<Save> saves= receiptRepository.findsave();
 
         for(int i=0;i<saves.size();i++)
         {
-            Giftlist gift=new Giftlist(saves.get(i));
-            recipetRepository.insertgiftlist(gift);
+            Gift gift=new Gift(saves.get(i));
+            gifts.add(gift);
         }
 
+        Receipt receipt=new Receipt(gifts,shoppings);
 
 
-        return Response.status(200).entity(saves).build();
+        return Response.status(200).entity(receipt).build();
     }
 
 

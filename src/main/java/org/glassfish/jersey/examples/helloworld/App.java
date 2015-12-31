@@ -92,7 +92,7 @@ public class App {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         final SqlSessionManager sqlSessionManager = SqlSessionManager.newInstance(sqlSessionFactory);
 
-        final RecipetRepository recipetRepository = sqlSessionManager.getMapper(RecipetRepository.class);
+        final ReceiptRepository receiptRepository = sqlSessionManager.getMapper(ReceiptRepository.class);
         final InputRepository inputRepository = sqlSessionManager.getMapper(InputRepository.class);
 
         final ResourceConfig config = new ResourceConfig()
@@ -100,7 +100,7 @@ public class App {
                 .register(new AbstractBinder() {
                     @Override
                     protected void configure() {
-                        bind(recipetRepository).to(RecipetRepository.class);
+                        bind(receiptRepository).to(ReceiptRepository.class);
                         bind(inputRepository).to(InputRepository.class);
                     }
 

@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThat;
 
 public class UsersRepositoryTest {
     private SqlSessionFactory sqlSessionFactory;
-    private RecipetRepository recipetRepository;
+    private ReceiptRepository receiptRepository;
     private SqlSession session;
 
     @Before
@@ -32,7 +32,7 @@ public class UsersRepositoryTest {
 
         session = sqlSessionFactory.openSession();
         session.getConnection().setAutoCommit(false);
-        recipetRepository = session.getMapper(RecipetRepository.class);
+        receiptRepository = session.getMapper(ReceiptRepository.class);
 
     }
     
@@ -46,7 +46,7 @@ public class UsersRepositoryTest {
 
     @Test
     public void should_find_all_users() {
-        List<Item> users1 = recipetRepository.findItem();
+        List<Item> users1 = receiptRepository.findItem();
         assertThat(users1.size(), is(6));
         
     }

@@ -8,6 +8,8 @@ public class Shopping{
     public long count;
     public float totalprice;
 
+
+
     public Shopping(Inputs inputs){
         this.barcode=inputs.barcode;
         this.name=inputs.name;
@@ -37,3 +39,4 @@ public class Shopping{
 
 
 }
+

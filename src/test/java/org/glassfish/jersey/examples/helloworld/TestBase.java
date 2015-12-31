@@ -10,7 +10,7 @@ import javax.ws.rs.core.Application;
 import static org.mockito.Mockito.mock;
 
 public class TestBase extends JerseyTest {
-    protected RecipetRepository recipetRepository = mock(RecipetRepository.class);
+    protected ReceiptRepository receiptRepository = mock(ReceiptRepository.class);
     protected InputRepository inputRepository = mock(InputRepository.class);
 
     @Override
@@ -26,7 +26,7 @@ public class TestBase extends JerseyTest {
             @Override
             protected void configure() {
 
-                bind(recipetRepository).to(RecipetRepository.class);
+                bind(receiptRepository).to(ReceiptRepository.class);
                 bind(inputRepository).to(InputRepository.class);
             }
         }).packages("org.glassfish.jersey.examples.helloworld");

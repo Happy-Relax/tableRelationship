@@ -5,7 +5,7 @@
 
 
 
-<mapper namespace="org.glassfish.jersey.examples.helloworld.RecipetRepository" >
+<mapper namespace="org.glassfish.jersey.examples.helloworld.ReceiptRepository" >
 
     <resultMap id="ItemMapper" type="org.glassfish.jersey.examples.helloworld.Item">
         <result property="barcode" column="barcode" />

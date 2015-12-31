@@ -5,7 +5,7 @@
 
 
 
-<mapper namespace="org.glassfish.jersey.examples.helloworld.RecipetRepository" >
+<mapper namespace="org.glassfish.jersey.examples.helloworld.ReceiptRepository" >
 
 
     <resultMap id="shoppingMapper" type="org.glassfish.jersey.examples.helloworld.Shopping">
@@ -16,6 +16,11 @@
         <result property="unit" column="unit" />
 
     </resultMap>
+
+    <select id="findshoppinglist" resultMap="shoppingMapper">
+        select * from shopping_list
+    </select>
+
 
 
     <resultMap id="inputsMapper" type="org.glassfish.jersey.examples.helloworld.Inputs">
@@ -48,8 +53,21 @@
         select Inputs.* from promotions,(select Items.*,inputs_group.count from Items,(select *,count(barcode) as count from Inputs group by barcode)inputs_group where inputs_group.barcode=Items.barcode)Inputs where Inputs.barcode=promotions.barcode
     </select>
 
+    <resultMap id="giftMapper" type="org.glassfish.jersey.examples.helloworld.Gift">
+        <result property="barcode" column="barcode" />
+        <result property="saveprice" column="saveprice" />
+        <result property="name" column="name" />
+        <result property="unit" column="unit" />
+        <result property="savenumber" column="savenumber" />
+    </resultMap>
+
+
+
     <insert id="insertgiftlist">
-        insert into giftlist(barcode,name,unit,saveprice,savenumber) values(#{barcode},#{name},#{unit},#{saveprice},#{savenumber})
+        insert into gift(barcode,name,unit,saveprice,savenumber) values(#{barcode},#{name},#{unit},#{saveprice},#{savenumber})
     </insert>
 
+    <select id="findgiftlist" resultMap="giftMapper">
+        select * from gift
+    </select>
 </mapper>
