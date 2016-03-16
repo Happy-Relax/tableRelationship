@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="org.glassfish.jersey.examples.helloworld.KlassRepository" >
+
+    <resultMap id="KlassMapper" type="org.glassfish.jersey.examples.helloworld.Klass">
+        <id property="klassId" column="classId" />
+        <result property="klassName" column="className" />
+        <collection  property="students" javaType="ArrayList" column="classId" ofType="Student" select="selectStudentsForKlass" >
+        </collection>
+
+    </resultMap>
+
+    <select id="findKlass" resultMap="KlassMapper">
+        select * from class
+    </select>
+
+    <select id="selectKlassById" resultMap="KlassMapper">
+        select * from class WHERE classId=#{classId};
+    </select>
+
+    <update id="updateById" >
+        UPDATE class SET className=#{className} WHERE classId=#{classId};
+    </update>
+
+    <delete id="deleteKlassById" >
+        DELETE FROM class WHERE classId=#{classId};
+    </delete>
+
+
+    <delete id="deleteKlassAndRelationshipWithStudent" >
+        DELETE FROM student WHERE classId=#{classId};
+        DELETE FROM class WHERE classId=#{classId};
+    </delete>
+
+    <select id="selectStudentsForKlass" resultType="Student" >
+        select * from student where classId = #{id}
+    </select>
+
+    <insert id="insertKlass" >
+        insert into class(classId,className) values(#{klassId},#{klassName});
+    </insert>
+
+</mapper>

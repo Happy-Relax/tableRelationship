@@ -92,16 +92,14 @@ public class App {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         final SqlSessionManager sqlSessionManager = SqlSessionManager.newInstance(sqlSessionFactory);
 
-        final ReceiptRepository receiptRepository = sqlSessionManager.getMapper(ReceiptRepository.class);
-        final InputRepository inputRepository = sqlSessionManager.getMapper(InputRepository.class);
+        final KlassRepository klassRepository = sqlSessionManager.getMapper(KlassRepository.class);
 
         final ResourceConfig config = new ResourceConfig()
                 .packages(" org.glassfish.jersey.examples.helloworld")
                 .register(new AbstractBinder() {
                     @Override
                     protected void configure() {
-                        bind(receiptRepository).to(ReceiptRepository.class);
-                        bind(inputRepository).to(InputRepository.class);
+                        bind(klassRepository).to(KlassRepository.class);
                     }
 
                 });

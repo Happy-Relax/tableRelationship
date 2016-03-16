@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="org.glassfish.jersey.examples.helloworld.CompanyRepository" >
+
+    <resultMap id="CompanyMapper" type="Company">
+        <id property="companyId" column="companyId" />
+        <result property="bossId" column="BossId" />
+        <result property="companyName" column="companyName" />
+        <collection  property="boss" javaType="Boss" column="BossId" select="selectBossForCompany" >
+        </collection>
+
+    </resultMap>
+
+    <select id="selectCompany" resultMap="CompanyMapper">
+        select * from company;
+    </select>
+
+    <select id="selectCompanyById" resultMap="CompanyMapper">
+        select * from company WHERE companyId=#{companyId};
+    </select>
+    <select id="selectBossForCompany" resultType="Boss">
+        select * from Boss WHERE BossId=#{id};
+    </select>
+
+    <insert id="insertCompany" >
+        insert into company(companyId,companyName,BossId) values(#{companyId},#{companyName},#{bossId});
+    </insert>
+
+    <update id="updateCompany" >
+        UPDATE company SET companyName=#{company.companyName},companyId=#{company.companyId} WHERE companyId=#{oldCompanyId};
+    </update>
+
+    <update id="updateRelationship" >
+        UPDATE company SET bossId=#{bossId} WHERE companyId=#{companyId};
+    </update>
+
+    <delete id="deleteCompanyById" >
+        DELETE FROM company WHERE companyId=#{companyId};
+    </delete>
+
+</mapper>

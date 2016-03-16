@@ -61,97 +61,28 @@ import javax.ws.rs.Path;
 public class HelloWorldResource {
 
     @Inject
-    private ReceiptRepository receiptRepository;
+    private KlassRepository klassRepository;
 
-    @Inject
-    private InputRepository inputRepository;
 
-//    public static final String CLICHED_MESSAGE = "123";
-//
-//    Item coca=new Item("ITEM000000","可口可乐","瓶",3.0f);
-//    Item sprite=new Item("ITEM000001","雪碧","瓶",3.0f);
-//    Item apple=new Item("ITEM000002","苹果","斤",5.5f);
-//    Item litchi=new Item("ITEM000003","荔枝","斤",15.0f);
-//    Item noodles=new Item("ITEM000004","方便面","袋",4.5f);
-//    Item battery=new Item("ITEM000005","电池","个",2.0f);
-//
-//    ArrayList allItems=new ArrayList();
-    @Path("/getitems")
+
+
+    @Path("/")
     @GET
     @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
-    public Response list(){
+    public String getHello() {
 
 
-//        ArrayList result = new ArrayList<>();
-        List<Item> list = receiptRepository.findItem();
-
-//        for(Item item : list){
-//            Item mid=new Item(item.getBarcode(),item.getName(),item.getUnit(),item.getPrice());
-//            result.add(mid);
-//        }
-
-
-        return Response.status(200).entity(list).build();
-    }
-
-
-
-    @Path("/insertinputs")
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response insert_inputs(@FormParam("barcode") String barcode){
-
-//        Item item=new Item("ITEM000000","可口可乐",3.0f,"瓶");
-        System.out.println(String.format(" %s",barcode));
-        inputRepository.insertinput(barcode);
-
-        return Response.status(200).entity(barcode).build();
-    }
-
-//    @Path("/")
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
-//    public List getHello() {
-//
-//
 //        allItems.add(coca);
 //        allItems.add(sprite);
 //        allItems.add(apple);
 //        allItems.add(litchi);
 //        allItems.add(noodles);
-//
-//
-//        return allItems;
-//    }
-
-    List<Shopping> shoppings=new ArrayList<>();
-    List<Gift> gifts=new ArrayList<>();
-
-    @Path("/receipt")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
-    public Response receipt(){
-        //shoppinglist-->PriceItems
-        List<Inputs> inputs= receiptRepository.findinputs();
-        for(int i=0;i<inputs.size();i++)
-        {
-            Shopping shopping=new Shopping(inputs.get(i));
-            shoppings.add(shopping);
-        }
-
-        List<Save> saves= receiptRepository.findsave();
-
-        for(int i=0;i<saves.size();i++)
-        {
-            Gift gift=new Gift(saves.get(i));
-            gifts.add(gift);
-        }
-
-        Receipt receipt=new Receipt(gifts,shoppings);
 
 
-        return Response.status(200).entity(receipt).build();
+        return "helloWorld";
     }
+
+
 
 
 }

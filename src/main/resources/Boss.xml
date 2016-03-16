@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="org.glassfish.jersey.examples.helloworld.BossRepository" >
+
+    <resultMap id="BossMapper" type="Boss">
+        <id property="bossId" column="BossId" />
+        <result property="bossName" column="BossName" />
+        <collection  property="company" javaType="Company" column="BossId" select="selectCompanyForBoss" >
+        </collection>
+
+
+    </resultMap>
+
+    <select id="selectBoss" resultMap="BossMapper">
+        select * from Boss;
+    </select>
+
+    <select id="selectCompanyForBoss" resultType="Company">
+        select * from company WHERE BossId=#{id};
+    </select>
+
+    <insert id="insertBoss" >
+        insert into Boss(BossId,BossName) values(#{bossId},#{bossName});
+    </insert>
+
+    <update id="updateBossName" >
+        UPDATE Boss SET BossName=#{bossName} WHERE BossId=#{bossId};
+    </update>
+
+    <delete id="deleteBossById" >
+        DELETE FROM Boss WHERE BossId=#{bossId};
+    </delete>
+
+
+    <delete id="deleteBossAndRelationshipWithCompany" >
+        DELETE FROM company WHERE BossId=#{bossId};
+        DELETE FROM Boss WHERE BossId=#{bossId};
+    </delete>
+</mapper>

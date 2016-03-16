@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="org.glassfish.jersey.examples.helloworld.StudentRepository" >
+
+    <resultMap id="StudentMapper" type="org.glassfish.jersey.examples.helloworld.Student">
+        <id property="studentId" column="studentId" />
+        <result property="klassId" column="classId" />
+        <result property="studentName" column="studentName" />
+        <association  property="klass" column="classId" javaType="Klass" select="selectKlassForStudent" >
+        </association>
+        <collection  property="teachers" column="studentId" javaType="ArrayList" ofType="Teacher" select="selectTeacherForStudent" >
+        </collection>
+    </resultMap>
+
+    <resultMap id="klassForStudentMapper" type="org.glassfish.jersey.examples.helloworld.Klass">
+        <id property="klassId" column="classId" />
+        <result property="klassName" column="className" />
+    </resultMap>
+    <resultMap id="teacherForStudentMapper" type="org.glassfish.jersey.examples.helloworld.Teacher">
+        <id property="teacherId" column="teacherId" />
+        <result property="teacherName" column="teacherName" />
+    </resultMap>
+
+    <select id="selectKlassForStudent" resultMap="klassForStudentMapper" >
+        SELECT * FROM class WHERE   classId = #{classId};
+    </select>
+
+    <select id="selectTeacherForStudent" resultMap="teacherForStudentMapper" >
+        SELECT teacher.teacherId,teacherName From teacher,
+        (SELECT teacherId FROM studentToTeacher WHERE studentId =#{studentId})middle WHERE middle.teacherId=teacher.teacherId;
+    </select>
+
+    <select id="selectById" resultMap="StudentMapper">
+        select * from student WHERE studentId=#{studentId};
+    </select>
+
+    <update id="updateById" >
+        UPDATE student SET studentName=#{studentName} WHERE studentId=#{studentId};
+    </update>
+
+    <delete id="deleteStudentById" >
+        DELETE FROM student WHERE studentId=#{studentId};
+    </delete>
+
+    <delete id="deleteRelationshipWithTeacher" >
+        DELETE FROM studentToTeacher WHERE studentId=#{studentId};
+        DELETE FROM student WHERE studentId=#{studentId};
+    </delete>
+
+    <update id="updateRelationshipWithKlass" >
+        UPDATE student SET classId=#{classId} WHERE studentId=#{studentId};
+    </update>
+
+    <insert id="createRelationshipWithTeacher" >
+        insert into studentToTeacher(teacherId,studentId) VALUES (#{teacherId},#{studentId});
+    </insert>
+
+    <update id="updateRelationshipWithTeacher" >
+         UPDATE studentToTeacher SET teacherId=#{teacherId} WHERE studentId=#{studentId}  ;
+    </update>
+</mapper>

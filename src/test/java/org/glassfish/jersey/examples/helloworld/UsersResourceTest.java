@@ -18,8 +18,8 @@ import static org.mockito.Matchers.anyMap;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class UsersResourceTest extends TestBase {
-    private String basePath = "/mysql";
+//public class UsersResourceTest extends TestBase {
+//    private String basePath = "/mysql";
 //    private User firstUser = mock(User.class);
 //    private User secondUser = mock(User.class);
 //    private User newUser = mock(User.class);
@@ -65,22 +65,22 @@ public class UsersResourceTest extends TestBase {
 //        assertThat((String) user.get("name"), is(firstUser.getName()));
 //    }
 
-    @Test
-    public void should_create_one_user(){
-        Form formData = new Form();
-
-        formData.param("barcode", "James");
-
-        Response response = target(basePath+"/insertinputs").request().post(Entity.entity(formData, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
-
-        assertThat(response.getStatus(), is(201));
-
-        Map user = response.readEntity(Map.class);
-
-        assertThat((String) user.get("uri"), is(basePath+"/3"));
-        assertThat((String) user.get("name"), is("James"));
-
-    }
+//    @Test
+//    public void should_create_one_user(){
+//        Form formData = new Form();
+//
+//        formData.param("barcode", "James");
+//
+//        Response response = target(basePath+"/insertinputs").request().post(Entity.entity(formData, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+//
+//        assertThat(response.getStatus(), is(201));
+//
+//        Map user = response.readEntity(Map.class);
+//
+//        assertThat((String) user.get("uri"), is(basePath+"/3"));
+//        assertThat((String) user.get("name"), is("James"));
+//
+//    }
 //
 //    @Test
 //    public void should_get_user_by_Id(){
@@ -99,4 +99,4 @@ public class UsersResourceTest extends TestBase {
     
 
     
-}
+//}

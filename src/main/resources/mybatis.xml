@@ -15,6 +15,9 @@
          as some drivers deny compatibility but still work -->
         <setting name="useGeneratedKeys" value="true"/>
     </settings>
+    <typeAliases>
+        <package name="org.glassfish.jersey.examples.helloworld"/>
+    </typeAliases>
 
     <!-- Continue going here -->
     <environments default="development">
@@ -22,15 +25,18 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/posDB?allowMultiQueries=true"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/tableRelationship?allowMultiQueries=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value=""/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="item.xml"/>
-        <mapper resource="Receipt.xml"/>
-        <mapper resource="Inputs.xml"/>
+        <mapper resource="Klass.xml"/>
+        <mapper resource="Boss.xml"/>
+        <mapper resource="Company.xml"/>
+        <mapper resource="Student.xml"/>
+        <mapper resource="Teacher.xml"/>
+
     </mappers>
 </configuration>

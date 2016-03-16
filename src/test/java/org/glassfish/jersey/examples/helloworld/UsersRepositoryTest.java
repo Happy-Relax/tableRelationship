@@ -18,38 +18,38 @@ import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
 
 public class UsersRepositoryTest {
-    private SqlSessionFactory sqlSessionFactory;
-    private ReceiptRepository receiptRepository;
-    private SqlSession session;
-
-    @Before
-    public void setUp() throws IOException, SQLException {
-        String resource = "mybatis.xml";
-        
-        Reader reader  = Resources.getResourceAsReader(resource);
-
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-
-        session = sqlSessionFactory.openSession();
-        session.getConnection().setAutoCommit(false);
-        receiptRepository = session.getMapper(ReceiptRepository.class);
-
-    }
-    
-    @After
-    public void tearDown(){
-        session.rollback();
-        session.close();
-        
-    }
-        
-
-    @Test
-    public void should_find_all_users() {
-        List<Item> users1 = receiptRepository.findItem();
-        assertThat(users1.size(), is(6));
-        
-    }
+//    private SqlSessionFactory sqlSessionFactory;
+//    private ReceiptRepository receiptRepository;
+//    private SqlSession session;
+//
+//    @Before
+//    public void setUp() throws IOException, SQLException {
+//        String resource = "mybatis.xml";
+//
+//        Reader reader  = Resources.getResourceAsReader(resource);
+//
+//        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+//
+//        session = sqlSessionFactory.openSession();
+//        session.getConnection().setAutoCommit(false);
+//        receiptRepository = session.getMapper(ReceiptRepository.class);
+//
+//    }
+//
+//    @After
+//    public void tearDown(){
+//        session.rollback();
+//        session.close();
+//
+//    }
+//
+//
+//    @Test
+//    public void should_find_all_users() {
+//        List<Item> users1 = receiptRepository.findItem();
+//        assertThat(users1.size(), is(6));
+//
+//    }
 
 
     
