@@ -12,7 +12,7 @@ public interface CompanyRepository {
 
     void insertCompany(Company company);
 
-    void updateCompany(@Param ("oldCompanyId")int companyId, @Param ("company")Company company);
+    void updateCompany(@Param("company") Company company);
 
     void deleteCompanyById(Company company);
 

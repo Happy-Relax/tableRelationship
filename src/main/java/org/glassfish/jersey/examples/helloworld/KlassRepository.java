@@ -15,7 +15,7 @@ public interface KlassRepository {
 
     Klass selectKlassById(@Param("classId") Integer klassId);
 
-    void updateById(@Param("classId") Integer klassId,@Param("className") String klassName);
+    void updateKlass(@Param("class") Klass klass);
 
     void deleteKlassById(@Param("classId") Integer klassId);
 

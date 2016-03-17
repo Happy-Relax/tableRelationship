@@ -25,4 +25,8 @@ public class Boss {
     public Company getCompany() {
         return company;
     }
+
+    public void setBossName(String bossName) {
+        this.bossName = bossName;
+    }
 }

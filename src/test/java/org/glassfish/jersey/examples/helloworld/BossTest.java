@@ -57,7 +57,7 @@ public class BossTest {
         Integer bossId=1;
         String bossNewName="2";
         Boss boss =new Boss(bossId,bossNewName);
-        bossRepository.updateBossName(boss);
+        bossRepository.updateBoss(boss);
         assertThat( bossRepository.selectBoss().get(0).getBossName(),is(bossNewName));
     }
     @Test
@@ -77,6 +77,8 @@ public class BossTest {
         Company company =new Company(companyId,companyName);
 
         assertThat( bossRepository.selectBoss().get(0).getCompany().getCompanyId(),is(companyId));
+        Integer bossId=1;
+        assertThat( bossRepository.selectBossById(bossId).getCompany().getCompanyId(),is(companyId));
     }
 
     @Test
@@ -85,6 +87,16 @@ public class BossTest {
         bossRepository.deleteBossAndRelationshipWithCompany(bossId);
         assertThat( bossRepository.selectBoss().size(),is(0));
         assertThat(companyRepository.selectCompanyById(1),is(nullValue()));
+    }
+    @Test
+    public void should_updata_boss_and_company(){
+        Integer bossId=1;
+        String bossNewName="2";
+        Boss boss =bossRepository.selectBossById(bossId);
+        String companyName="one";
+        boss.getCompany().setCompanyName(companyName);
+        bossRepository.updateBoss(boss);
+        assertThat( bossRepository.selectBossById(bossId).getCompany().getCompanyName(),is(companyName));
     }
 
 }

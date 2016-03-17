@@ -46,8 +46,10 @@ public class TeacherTest {
     @Test
     public void should_update_a_record_when_student_not_exsit(){
         Integer teacherId=1;
+        Teacher teacher=teacherRepository.selectById(teacherId);
         String teacherName="LM";
-        teacherRepository.updateById(teacherId,teacherName);
+        teacher.setTeacherName(teacherName);
+        teacherRepository.updateTeacher(teacher);
 
         assertThat( teacherRepository.selectById(teacherId).getTeacherName(),is(teacherName));
     }
@@ -89,5 +91,15 @@ public class TeacherTest {
         Integer teacherId=1;
         teacherRepository.deleteRelationshipWithStudent(teacherId);
         assertThat( teacherRepository.selectById(teacherId),is(nullValue()));
+    }
+    @Test
+    public void should_update_teacher_and_students(){
+        Integer teacherId=1;
+        String studentName="LJ";
+
+        Teacher teacher=teacherRepository.selectById(teacherId);
+        teacher.getStudents().get(0).setStudentName(studentName);
+        teacherRepository.updateTeacher(teacher);
+        assertThat( teacherRepository.selectById(teacherId).getStudents().get(0).getStudentName(),is(studentName));;
     }
 }

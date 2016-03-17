@@ -23,4 +23,8 @@ public class Teacher {
     public Integer getTeacherId() {
         return teacherId;
     }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
 }

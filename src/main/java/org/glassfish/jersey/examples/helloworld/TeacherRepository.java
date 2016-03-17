@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 public interface TeacherRepository {
     Teacher selectById(@Param("teacherId") Integer teacherId);
 
-    void updateById(@Param("teacherId") Integer teacherId,@Param("teacherName") String teacherName);
+    void updateTeacher(@Param("teacher") Teacher teacher);
 
     void deleteTeacherById(@Param("teacherId") Integer teacherId);
 

@@ -24,12 +24,18 @@
         select * from company WHERE BossId=#{id};
     </select>
 
+
+    <select id="selectBossById" resultMap="BossMapper">
+        select * from Boss;
+    </select>
+
     <insert id="insertBoss" >
         insert into Boss(BossId,BossName) values(#{bossId},#{bossName});
     </insert>
 
-    <update id="updateBossName" >
-        UPDATE Boss SET BossName=#{bossName} WHERE BossId=#{bossId};
+    <update id="updateBoss" >
+        UPDATE company SET companyName=#{boss.company.companyName} WHERE companyId=#{boss.company.companyId};
+        UPDATE Boss SET BossName=#{boss.bossName} WHERE BossId=#{boss.bossId};
     </update>
 
     <delete id="deleteBossById" >

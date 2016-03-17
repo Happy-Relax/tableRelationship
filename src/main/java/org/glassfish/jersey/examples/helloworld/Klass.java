@@ -29,7 +29,11 @@ public class Klass {
 
 
 
-    public List<Student> getKlassStudents() {
+    public List<Student> getStudents() {
         return this.students;
+    }
+
+    public void setKlassName(String klassName) {
+        this.klassName = klassName;
     }
 }

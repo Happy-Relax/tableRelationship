@@ -32,7 +32,8 @@
     </insert>
 
     <update id="updateCompany" >
-        UPDATE company SET companyName=#{company.companyName},companyId=#{company.companyId} WHERE companyId=#{oldCompanyId};
+        UPDATE Boss SET BossName=#{company.boss.bossName} WHERE BossId=#{company.boss.bossId};
+        UPDATE company SET companyName=#{company.companyName} WHERE companyId=#{company.companyId};
     </update>
 
     <update id="updateRelationship" >

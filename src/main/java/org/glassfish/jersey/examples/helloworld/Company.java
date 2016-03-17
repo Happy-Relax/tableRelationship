@@ -53,4 +53,8 @@ public class Company {
     public Integer getBossId() {
         return bossId;
     }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 }

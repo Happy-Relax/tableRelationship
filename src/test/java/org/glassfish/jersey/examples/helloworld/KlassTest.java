@@ -10,8 +10,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -62,7 +60,8 @@ public class KlassTest {
     public void should_update_a_record_when_student_not_exsit(){
         Integer klassId=1;
         String klassName="chinese";
-        klassRepository.updateById(klassId,klassName);
+        Klass klass=new Klass(klassId,klassName,null);
+        klassRepository.updateKlass(klass);
 
         assertThat( klassRepository.selectKlassById(klassId).getKlassName(),is(klassName));
     }
@@ -81,7 +80,7 @@ public class KlassTest {
         String studentName="LJY";
         Klass klass=klassRepository.selectKlassById(klassId);
 
-        assertThat( klass.getKlassStudents().get(0).getStudentName(),is(studentName));
+        assertThat( klass.getStudents().get(0).getStudentName(),is(studentName));
     }
     @Test
     public void should_delete_record_and_relationship_with_student(){
@@ -91,5 +90,17 @@ public class KlassTest {
 
         assertThat( klassRepository.selectKlassById(klassId),is(nullValue()));
         assertThat( studentRepository.selectById(1),is(nullValue()));
+    }
+
+    @Test
+    public void should_update_klass_and_students(){
+
+        Integer klassId=1;
+        Klass klass=klassRepository.selectKlassById(klassId);
+        String studentName="LJ";
+        klass.getStudents().get(0).setStudentName(studentName);
+        klassRepository.updateKlass(klass);
+
+        assertThat(klassRepository.selectKlassById(klassId).getStudents().get(0).getStudentName(),is(studentName));
     }
 }

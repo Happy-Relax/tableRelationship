@@ -12,11 +12,13 @@ public interface BossRepository {
       void insertBoss(Boss boss);
 
       List<Boss> selectBoss();
-      void updateBossName(Boss boss);
+      void updateBoss(@Param("boss") Boss boss);
 
       void deleteBossById(Boss boss);
 
       List<Boss> selectCompanyByBoss();
 
       void deleteBossAndRelationshipWithCompany(@Param("bossId") Integer bossId);
+
+      Boss selectBossById(Integer bossId);
 }

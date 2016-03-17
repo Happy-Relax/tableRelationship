@@ -23,8 +23,11 @@
         select * from class WHERE classId=#{classId};
     </select>
 
-    <update id="updateById" >
-        UPDATE class SET className=#{className} WHERE classId=#{classId};
+    <update id="updateKlass" >
+        <foreach collection="class.students" item="student">
+            UPDATE student SET studentName=#{student.studentName} WHERE studentId=#{student.studentId};
+        </foreach>
+        UPDATE class SET className=#{class.klassName} WHERE classId=#{class.klassId};
     </update>
 
     <delete id="deleteKlassById" >

@@ -14,6 +14,16 @@ public class Student {
     private Klass klass;
     private List<Teacher> teachers;
 
+    public Student(){}
+
+    public Student(Integer studentId, String studentName, Klass klass, List<Teacher> teachers) {
+        this.studentId=studentId;
+        this.studentName=studentName;
+        this.klass=klass;
+        this.klassId=klass.getKlassId();
+        this.teachers=teachers;
+    }
+
 
     public String getStudentName() {
         return studentName;
@@ -33,5 +43,9 @@ public class Student {
 
     public List<Teacher> getTeachers() {
         return teachers;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 }

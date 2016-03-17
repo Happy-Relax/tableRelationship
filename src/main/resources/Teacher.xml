@@ -29,8 +29,11 @@
         select * from teacher WHERE teacherId=#{teacherId};
     </select>
 
-    <update id="updateById" >
-        UPDATE teacher SET teacherName=#{teacherName} WHERE teacherId=#{teacherId};
+    <update id="updateTeacher" >
+        <foreach collection="teacher.students" item="student">
+            UPDATE student SET studentName=#{student.studentName} WHERE studentId=#{student.studentId};
+        </foreach>
+        UPDATE teacher SET teacherName=#{teacher.teacherName} WHERE teacherId=#{teacher.teacherId};
     </update>
 
     <delete id="deleteTeacherById" >
