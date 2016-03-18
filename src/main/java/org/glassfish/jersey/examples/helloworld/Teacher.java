@@ -12,6 +12,15 @@ public class Teacher {
     private Integer teacherId;
     private List<Student> students;
 
+    public Teacher(){}
+
+    public Teacher(Integer teacherId, String teacherName,List<Student> students) {
+        this.teacherId=teacherId;
+        this.teacherName=teacherName;
+        this.students=students;
+
+    }
+
     public String getTeacherName() {
         return teacherName;
     }

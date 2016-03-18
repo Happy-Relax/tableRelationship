@@ -17,6 +17,12 @@ public class Company {
         this.bossId=null;
     }
 
+    public Company(Integer companyId, String companyName, Integer bossId) {
+        this.companyName=companyName;
+        this.companyId=companyId;
+        this.bossId=bossId;
+    }
+
     public Integer getCompanyId() {
         return companyId;
     }

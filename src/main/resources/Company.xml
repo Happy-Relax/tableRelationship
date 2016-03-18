@@ -33,11 +33,11 @@
 
     <update id="updateCompany" >
         UPDATE Boss SET BossName=#{company.boss.bossName} WHERE BossId=#{company.boss.bossId};
-        UPDATE company SET companyName=#{company.companyName} WHERE companyId=#{company.companyId};
+        UPDATE company SET companyName=#{company.companyName} BossId=#{company.BossId} WHERE companyId=#{company.companyId};
     </update>
 
     <update id="updateRelationship" >
-        UPDATE company SET bossId=#{bossId} WHERE companyId=#{companyId};
+        UPDATE company SET BossId=#{bossId} WHERE companyId=#{companyId};
     </update>
 
     <delete id="deleteCompanyById" >

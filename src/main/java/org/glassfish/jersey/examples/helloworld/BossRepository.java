@@ -21,4 +21,5 @@ public interface BossRepository {
       void deleteBossAndRelationshipWithCompany(@Param("bossId") Integer bossId);
 
       Boss selectBossById(Integer bossId);
+
 }

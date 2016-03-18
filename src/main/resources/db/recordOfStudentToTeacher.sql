@@ -1,0 +1,1 @@
+INSERT INTO studentToTeacher (studentId,teacherId) VALUES(1,1);

@@ -49,6 +49,10 @@
         insert into studentToTeacher(teacherId,studentId) VALUES (#{teacherId},#{studentId});
     </insert>
 
+    <insert id="insertTeacher" >
+        insert into teacher(teacherId,teacherName) VALUES (#{teacherId},#{teacherName});
+    </insert>
+
     <update id="updateRelationship" >
         UPDATE studentToTeacher SET studentId=#{studentId} WHERE teacherId=#{teacherId};
     </update>

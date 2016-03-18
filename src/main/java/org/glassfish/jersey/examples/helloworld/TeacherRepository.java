@@ -17,4 +17,6 @@ public interface TeacherRepository {
     void updateRelationship(@Param("teacherId") Integer teacherId, @Param("studentId") Integer studentId);
 
     void deleteRelationshipWithStudent(@Param("teacherId") Integer teacherId);
+
+    void insertTeacher(Teacher teacher);
 }

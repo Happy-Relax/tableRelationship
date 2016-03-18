@@ -20,9 +20,13 @@ public class Student {
         this.studentId=studentId;
         this.studentName=studentName;
         this.klass=klass;
-        this.klassId=klass.getKlassId();
         this.teachers=teachers;
+        if(klass!=null){
+        this.klassId=klass.getKlassId();
+        }
     }
+
+
 
 
     public String getStudentName() {

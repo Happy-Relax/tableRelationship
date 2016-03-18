@@ -1,5 +1,6 @@
 package org.glassfish.jersey.examples.helloworld;
 
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -60,14 +61,14 @@ public class BossTest {
         bossRepository.updateBoss(boss);
         assertThat( bossRepository.selectBoss().get(0).getBossName(),is(bossNewName));
     }
-    @Test
-    public void should_delete_a_record_when_compan_not_exsit(){
-        Integer bossId=1;
-        String bossNewName="2";
-        Boss boss =new Boss(bossId,bossNewName);
-        bossRepository.deleteBossById(boss);
-        assertThat( bossRepository.selectBoss().size(),is(0));
-    }
+//    @Test
+//    public void should_delete_a_record_when_company_not_exist(){
+//        Integer bossId=1;
+//        String bossNewName="2";
+//        Boss boss =new Boss(bossId,bossNewName);
+//        bossRepository.deleteBossById(boss);
+//        assertThat( bossRepository.selectBoss().size(),is(0));
+//    }
 
     @Test
     public void should_select_a_record_when_company_exsit(){
@@ -91,12 +92,48 @@ public class BossTest {
     @Test
     public void should_updata_boss_and_company(){
         Integer bossId=1;
-        String bossNewName="2";
         Boss boss =bossRepository.selectBossById(bossId);
         String companyName="one";
         boss.getCompany().setCompanyName(companyName);
         bossRepository.updateBoss(boss);
         assertThat( bossRepository.selectBossById(bossId).getCompany().getCompanyName(),is(companyName));
     }
+    @Test
+    public void should_get_error_when_primary_key_create_as_null(){
+        Integer bossId=null;
+        Boss boss=new Boss(bossId,"test");
+        Boolean except=false;
+        try {
+            bossRepository.insertBoss(boss);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_primary_key_create_not_unique(){
+        Integer bossId=1;
+        Boss boss=new Boss(bossId,"test");
+        Boolean except=false;
+        try {
+            bossRepository.insertBoss(boss);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_delete(){
+        Integer bossId=1;
+        Boss boss=new Boss(bossId,"test");
+        Boolean except=false;
+        try {
+            bossRepository.deleteBossById(boss);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+
 
 }

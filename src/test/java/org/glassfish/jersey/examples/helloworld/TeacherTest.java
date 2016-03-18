@@ -1,5 +1,6 @@
 package org.glassfish.jersey.examples.helloworld;
 
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -41,6 +42,15 @@ public class TeacherTest {
         Teacher teacher =teacherRepository.selectById(teacherId);
 
         assertThat(teacher.getTeacherName(),is("TJ"));
+    }
+    @Test
+    public void should_insert_a_record_when_student_not_exsit(){
+        Integer teacherId=3;
+        String teacherName="LX";
+        Teacher teacher =new Teacher(teacherId,teacherName,null);
+        teacherRepository.insertTeacher(teacher);
+
+        assertThat(teacherRepository.selectById(teacherId).getTeacherName(),is("LX"));
     }
 
     @Test
@@ -101,5 +111,70 @@ public class TeacherTest {
         teacher.getStudents().get(0).setStudentName(studentName);
         teacherRepository.updateTeacher(teacher);
         assertThat( teacherRepository.selectById(teacherId).getStudents().get(0).getStudentName(),is(studentName));;
+    }
+
+    @Test
+    public void should_get_error_when_primary_key_create_as_null(){
+        Integer teacherId=null;
+        Teacher teacher=new Teacher(teacherId,"test",null);
+        Boolean except=false;
+        try {
+            teacherRepository.insertTeacher(teacher);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_primary_key_create_not_unique(){
+        Integer teacherId=1;
+        Teacher teacher=new Teacher(teacherId,"test",null);
+        Boolean except=false;
+        try {
+            teacherRepository.insertTeacher(teacher);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_delete(){
+        Integer teacherId=1;
+        Boolean except=false;
+        try {
+            teacherRepository.deleteTeacherById(teacherId);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+
+    @Test
+    public void should_get_error_when_create_relationship_when_teacher_primary_key_not_exist(){
+
+        Integer teacherId=3;
+        Integer studentId=1;
+
+        Boolean except=false;
+        try {
+            teacherRepository.createRelationship(teacherId,studentId);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_update_relationship_when_student_primary_key_not_exist(){
+
+        Integer teacherId=1;
+        Integer studentId=3;
+
+        Boolean except=false;
+        try {
+            teacherRepository.updateRelationship(teacherId,studentId);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
     }
 }

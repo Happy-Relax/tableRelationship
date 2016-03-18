@@ -1,5 +1,6 @@
 package org.glassfish.jersey.examples.helloworld;
 
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -21,6 +22,7 @@ import static org.junit.Assert.assertThat;
 public class CompanyTest {
     private SqlSessionFactory sqlSessionFactory;
     private CompanyRepository companyRepository;
+    private BossRepository bossRepository;
     private SqlSession session;
 
     @Before
@@ -34,6 +36,7 @@ public class CompanyTest {
         session = sqlSessionFactory.openSession();
         session.getConnection().setAutoCommit(false);
         companyRepository = session.getMapper(CompanyRepository.class);
+        bossRepository = session.getMapper(BossRepository.class);
 
     }
     @Test
@@ -80,6 +83,8 @@ public class CompanyTest {
 
         Integer bossId=2;
         Integer companyId=2;
+        Boss boss=new Boss(bossId,"two");
+        bossRepository.insertBoss(boss);
         companyRepository.updateRelationship(bossId,companyId);
 
         assertThat( companyRepository.selectCompany().get(1).getBossId(),is(bossId));
@@ -102,5 +107,82 @@ public class CompanyTest {
         companyRepository.updateCompany(company);
 
         assertThat( companyRepository.selectCompanyById(companyId).getBoss().getBossName(),is(bossName));
+    }
+
+    @Test
+    public void should_get_error_when_primary_key_create_as_null(){
+        Integer companyId=null;
+        Company company=new Company(companyId,"test");
+        Boolean except=false;
+        try {
+            companyRepository.insertCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_primary_key_create_not_unique(){
+        Integer companyId=1;
+        Company company=new Company(companyId,"test");
+        Boolean except=false;
+        try {
+            companyRepository.insertCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_create_foreign_not_exist_in_Boss(){
+        Integer companyId=3;
+        Integer bossId=4;
+        Company company=new Company(companyId,"test",bossId);
+        Boolean except=false;
+        try {
+            companyRepository.insertCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_update_foreign_not_exist_in_Boss(){
+        Integer companyId=3;
+        Integer bossId=4;
+        Company company=new Company(companyId,"test",bossId);
+        Boolean except=false;
+        try {
+            companyRepository.updateCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_update_unique_key_not_unique(){
+        Integer companyId=3;
+        Integer bossId=1;
+        Company company=new Company(companyId,"test",bossId);
+        Boolean except=false;
+        try {
+            companyRepository.updateCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
+    }
+    @Test
+    public void should_get_error_when_create_unique_key_not_unique(){
+        Integer companyId=3;
+        Integer bossId=1;
+        Company company=new Company(companyId,"test",bossId);
+        Boolean except=false;
+        try {
+            companyRepository.insertCompany(company);
+        }catch (PersistenceException ex){
+            except=true;
+        }
+        assertThat( except,is(true));
     }
 }
