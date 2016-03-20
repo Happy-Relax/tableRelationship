@@ -44,7 +44,7 @@
 
 
     <delete id="deleteBossAndRelationshipWithCompany" >
-        DELETE FROM company WHERE BossId=#{bossId};
+        UPDATE company SET BossId=NULL WHERE BossId=#{bossId};
         DELETE FROM Boss WHERE BossId=#{bossId};
     </delete>
 </mapper>

@@ -87,7 +87,7 @@ public class BossTest {
         Integer bossId=1;
         bossRepository.deleteBossAndRelationshipWithCompany(bossId);
         assertThat( bossRepository.selectBoss().size(),is(0));
-        assertThat(companyRepository.selectCompanyById(1),is(nullValue()));
+        assertThat(companyRepository.selectCompanyById(1).getBossId(),is(nullValue()));
     }
     @Test
     public void should_updata_boss_and_company(){

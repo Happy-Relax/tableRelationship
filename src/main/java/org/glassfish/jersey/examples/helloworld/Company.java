@@ -63,4 +63,17 @@ public class Company {
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+
+    public void setBossId(Integer bossId) {
+        this.bossId = bossId;
+    }
+
+    public void setBoss(Boss boss) {
+        this.boss = boss;
+    }
 }

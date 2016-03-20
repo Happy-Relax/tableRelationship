@@ -91,7 +91,7 @@ public class KlassTest {
         klassRepository.deleteKlassAndRelationshipWithStudent(klassId);
 
         assertThat( klassRepository.selectKlassById(klassId),is(nullValue()));
-        assertThat( studentRepository.selectById(1),is(nullValue()));
+        assertThat( studentRepository.selectById(1).getKlassId(),is(nullValue()));
     }
 
     @Test

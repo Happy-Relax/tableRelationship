@@ -36,7 +36,7 @@
 
 
     <delete id="deleteKlassAndRelationshipWithStudent" >
-        DELETE FROM student WHERE classId=#{classId};
+        UPDATE student SET classId=NULL WHERE classId=#{classId};
         DELETE FROM class WHERE classId=#{classId};
     </delete>
 
